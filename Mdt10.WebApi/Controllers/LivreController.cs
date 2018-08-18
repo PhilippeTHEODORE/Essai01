@@ -22,16 +22,6 @@ namespace Mdt10.WebApi.Controllers
 
         ILivreGridDao daoLivreGrid = Windsor.GetObjet<ILivreGridDao>();
 
-        //public IEnumerable<Livre> GetServerDataByIP(string ip)
-        //{
-        //    return dao.GetAll();
-        //}
-
-        //public IEnumerable<Livre> GetServerDataByIP1(string ip1)
-        //{
-        //    return dao.GetAll();
-        //}
-
         //[HttpGet]
         public string GetIndex()
         { return "erreur"; }
