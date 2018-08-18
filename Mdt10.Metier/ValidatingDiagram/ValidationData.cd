@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Mdt10.Metier.ValidationData.AbstractValidationData&lt;R&gt;">
+    <Position X="4" Y="0.75" Width="3.25" />
+    <NestedTypes>
+      <Delegate Name="Mdt10.Metier.ValidationData.AbstractValidationData&lt;R&gt;.ValidationDataDataChangedHandler">
+        <TypeIdentifier>
+          <NewMemberFileName>ValidationData\AbstractValidationData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IgBAACAAQAAQQAAIIAgQAAQAAABAAQAQBAEAIAAAAgA=</HashCode>
+      <FileName>ValidationData\AbstractValidationData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ErrorLevel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationData.ValidationDataChaine">
+    <Position X="8.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationData\ValidationDataChaine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationData.ValidationDataDate">
+    <Position X="8.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationData\ValidationDataDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationData.ValidationDataEntier">
+    <Position X="8.25" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationData\ValidationDataEntier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Mdt10.Metier.ValidationData.IValidationData&lt;R&gt;">
+    <Position X="0.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAQAAAAAAgQAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationData\IAbstractValidationData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Mdt10.Metier.ValidationData.IValidationReport">
+    <Position X="0.75" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAIIAAAAAQAAAAAAAAAAAEAIAAAAgA=</HashCode>
+      <FileName>ValidationData\IValidationReport.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Mdt10.Metier.ValidationData.ErrorLevel">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ValidationData\ErreurLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Mdt10.Metier.Entites" assembly="Mdt10.Metier">
+  <class name="Periodicite" table="periodicite">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <version name="Version" column="version"/>
+
+    <property name="Libelle" type="String">
+      <column name="libelle" not-null="true" length="32" sql-type="VARCHAR(32)" />
+    </property>
+    <component name="TimeStamp" class="TimeStamp">
+      <property name="CreateUser" type="String">
+        <column name="create_user" not-null="true" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="CreateDate" type="DateTime">
+        <column name="create_date" not-null="true" sql-type="DATETIME" />
+      </property>
+
+      <property name="UpdateUser" type="String">
+        <column name="update_user" not-null="false" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="UpdateDate" type="DateTime">
+        <column name="update_date" not-null="false" sql-type="DATETIME" />
+      </property>
+
+    </component>
+
+  </class>
+</hibernate-mapping>

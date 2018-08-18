@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Mdt10.Data.Dao.MediaDao">
+    <Position X="1.75" Y="1.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>EntiteDao\MediaDao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mdt10.Metier.Entites.Media">
+    <Position X="1" Y="3.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Mdt10.Data.AbstractEntiteDao&lt;T, IdT&gt;">
+    <Position X="5.75" Y="2" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>ASAAAKIwAIAAAAAgAgAAAAABAAEAAAAAAgABAAAAkIA=</HashCode>
+      <FileName>AbstractEntiteDao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mdt10.Metier.Entites.Entite">
+    <Position X="1" Y="5.5" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Mdt10.Metier.DataInterfaces.IMediaDaoEntite">
+    <Position X="12.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Mdt10.Metier.DataInterfaces.IDaoEntite&lt;T, IdT&gt;" Collapsed="true">
+    <Position X="12" Y="3" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

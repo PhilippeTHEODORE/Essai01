@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99554321-0ACE-439E-A154-BF3409F7EF4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mdt10.Metier</RootNamespace>
+    <AssemblyName>Mdt10.Metier</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Mdt10.Dlls\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuffersEntites\BufferExemplaire.cs" />
+    <Compile Include="BuffersEntites\BufferLivre.cs" />
+    <Compile Include="BuffersEntites\AbstractBuffer.cs" />
+    <Compile Include="BuffersEntites\BufferMotCle.cs" />
+    <Compile Include="DaoHelper.cs" />
+    <Compile Include="DataInterfaces\IDaoEntites.cs" />
+    <Compile Include="Entites\Utilisateur.cs" />
+    <Compile Include="Enums\StatusBuffer.cs" />
+    <Compile Include="ValidationData\AbstractValidationData.cs" />
+    <Compile Include="ValidationData\ValidationDataEntier.cs" />
+    <Compile Include="ValidationData\IAbstractValidationData.cs" />
+    <Compile Include="ValidationData\IValidationReport.cs" />
+    <Compile Include="ValidationData\ValidationDataListeBoolean.cs" />
+    <Compile Include="ValidationData\ValidationDataBoolean.cs" />
+    <Compile Include="ValidationData\ValidationDataChaine.cs" />
+    <Compile Include="ValidationData\ErreurLevel.cs" />
+    <Compile Include="ValidationData\ValidationDataDate.cs" />
+    <Compile Include="ValidationRulesBuilder\BuilderBuilderDatesBornees.cs" />
+    <Compile Include="ValidationRules\AbstractValidationRule.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDateInferieureEgale.cs" />
+    <Compile Include="ValidationRules\ValidationRuleRunning.cs" />
+    <Compile Include="ValidationRules\ValidationRuleEntierRequis.cs" />
+    <Compile Include="ValidationRules\ValidationRuleEntierSuperieur.cs" />
+    <Compile Include="ValidationRules\ValidationRuleEntierValideOuVide.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDateEntreBornes.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDateSuperieureEgale.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDateValideOuVide.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDatesBornees.cs" />
+    <Compile Include="ValidationRules\ValidationRuleDateRequise.cs" />
+    <Compile Include="ValidationRules\IValidationRule.cs" />
+    <Compile Include="ValidationRules\ValidationRuleChaineRequise.cs" />
+    <Compile Include="ValidationsRulesLibrary\AbstractValidation.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationMedia.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationGenre.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationBandeDessinnee.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationAudio.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationExemplaire.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationLivre.cs" />
+    <Compile Include="ValidationsRulesLibrary\Entites\ValidationDocument.cs" />
+    <Compile Include="ValidationsRulesLibrary\Services\ValidationEntreeDocument.cs" />
+    <Compile Include="Windsor.cs" />
+    <Compile Include="DataInterfaces\IDaoScalaires.cs" />
+    <Compile Include="DataInterfaces\IDaoEntite.cs" />
+    <Compile Include="DataInterfaces\IDaoSession.cs" />
+    <Compile Include="DataInterfaces\IDaoScalaire.cs" />
+    <Compile Include="DataInterfaces\IDaoVue.cs" />
+    <Compile Include="DataInterfaces\IDaoVues.cs" />
+    <Compile Include="Entites\DocumentGenerique.cs" />
+    <Compile Include="Entites\DocumentMotCle.cs" />
+    <Compile Include="Entites\Entite.cs" />
+    <Compile Include="Entites\Audio.cs" />
+    <Compile Include="Entites\BandeDessinnee.cs" />
+    <Compile Include="Entites\Exemplaire.cs" />
+    <Compile Include="Entites\Document.cs" />
+    <Compile Include="Entites\Genre.cs" />
+    <Compile Include="Entites\TimeStamp.cs" />
+    <Compile Include="Entites\Livre.cs" />
+    <Compile Include="Entites\Media.cs" />
+    <Compile Include="Entites\MotCle.cs" />
+    <Compile Include="Entites\Periodicite.cs" />
+    <Compile Include="Entites\Periodique.cs" />
+    <Compile Include="Entites\Revue.cs" />
+    <Compile Include="Entites\TypeDocument.cs" />
+    <Compile Include="Entites\Video.cs" />
+    <Compile Include="Enums\CheckEntityVersion.cs" />
+    <Compile Include="Enums\SortingDirection.cs" />
+    <Compile Include="Exception\UpdatedOrDeletedObject.cs" />
+    <Compile Include="Filters\FiltersEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorting\ComparePropertieGeneric.cs" />
+    <Compile Include="Sorting\SortingProperty.cs" />
+    <Compile Include="Vues\AudioGrid.cs" />
+    <Compile Include="Vues\BandeDessinneeGrid.cs" />
+    <Compile Include="Vues\DocumentMotCleGrid.cs" />
+    <Compile Include="Vues\MotCleGrid.cs" />
+    <Compile Include="Vues\PeriodiciteGrid.cs" />
+    <Compile Include="Vues\ExemplaireGrid.cs" />
+    <Compile Include="Vues\MediaGrid.cs" />
+    <Compile Include="Vues\VideoGrid.cs" />
+    <Compile Include="Vues\LivreGrid.cs" />
+    <Compile Include="Vues\GenreCombo.cs" />
+    <Compile Include="Vues\GenreGrid.cs" />
+    <Compile Include="Vues\PeriodiciteCombo.cs" />
+    <Compile Include="Vues\RevueCombo.cs" />
+    <Compile Include="Vues\RevueGrid.cs" />
+    <Compile Include="Vues\TypeDocumentCombo.cs" />
+    <Compile Include="Vues\MediaCombo.cs" />
+    <Compile Include="Vues\TypeDocumentGrid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Media.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\TypeDocument.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Genre.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\MotCle.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Periodicite.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entites\Revue.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Exemplaire.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\DocumentMotCle.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\CastleMetierDao.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\CastleScalaireDao.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\CastleServices.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\CastleVueDao.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\MediathequeNHibernate.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Entites\DocumentGenerique.hbm.xml.old" />
+    <None Include="ValidatingDiagram\ValidationLivre.cd" />
+    <None Include="ValidatingDiagram\ValidationRule.cd" />
+    <None Include="ValidatingDiagram\ValidationData.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entites\Entite.hbm.xml.old">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Utilisateur.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entites\Document.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

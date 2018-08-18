@@ -1,0 +1,39 @@
+﻿<!--<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Mdt10.Metier.Entites" assembly="Mdt10.Metier">
+  <class name="DocumentGenerique" table="document">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <version name="Version" />
+    <component name="TimeStamp" class="TimeStamp">
+      <property name="CreateUser" type="String">
+        <column name="create_user" not-null="false" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="UpdateUser" type="String">
+        <column name="update_user" not-null="false" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="UpdateDate" type="DateTime">
+        <column name="update_date" not-null="false" sql-type="DATETIME" />
+      </property>
+
+      <property name="CreateDate" type="DateTime">
+        <column name="create_date" not-null="false" sql-type="DATETIME" />
+      </property>
+    </component>
+
+    <property name="Titre" column="titre"/>
+    <property name="Resume" column="resume"/>
+    <property name="IdNationalite" column="id_nationalite"/>
+    <property name="DateParution" column="date_parution"/>
+    <property name="DateEntree" column="date_entree"/>
+    <property name="Disponible" column="disponible"/>
+    <property name="NomEnfant" column="nom_enfant"/>
+
+    <many-to-one name="TypeDocument" column="id_type_document"/>
+    <many-to-one name="Genre" column="id_genre"/>
+   
+  </class>
+</hibernate-mapping>-->

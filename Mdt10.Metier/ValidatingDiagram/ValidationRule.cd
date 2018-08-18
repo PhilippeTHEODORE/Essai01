@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Mdt10.Metier.ValidationRule.AbstractValidationRule">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAEAAAAAAAAAAAQIAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ValidationRules\AbstractValidationRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationRule.ValidationRuleChaineRequise">
+    <Position X="4.5" Y="3.25" Width="3.25" />
+    <InheritanceLine Type="Mdt10.Metier.ValidationRule.AbstractValidationRule" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="3.438" Y="2.824" />
+        <Point X="3.438" Y="3.112" />
+        <Point X="6.125" Y="3.112" />
+        <Point X="6.125" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidationRuleChaineRequise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationRule.ValidationRuleDateEntreBornes">
+    <Position X="4.5" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAABAABAAA=</HashCode>
+      <FileName>ValidationRules\ValidationRuleDateEntreBornes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationRule.ValidationRuleDateValideOuVide">
+    <Position X="0.5" Y="5.75" Width="3.75" />
+    <InheritanceLine Type="Mdt10.Metier.ValidationRule.AbstractValidationRule" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="2.824" />
+        <Point X="2.125" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAA=</HashCode>
+      <FileName>ValidationRules\ValidationRuleDateValideOuVide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationRule.ValidationRuleDateRequise">
+    <Position X="4.75" Y="5.75" Width="3.25" />
+    <InheritanceLine Type="Mdt10.Metier.ValidationRule.AbstractValidationRule" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="2.824" />
+        <Point X="2.75" Y="5.56" />
+        <Point X="6.375" Y="5.56" />
+        <Point X="6.375" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAA=</HashCode>
+      <FileName>ValidationRules\ValidationRuleDateRequise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mdt10.Metier.ValidationRule.ValidationRuleDatesBornees">
+    <Position X="8.75" Y="4.5" Width="3.75" />
+    <InheritanceLine Type="Mdt10.Metier.ValidationRule.AbstractValidationRule" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="2.824" />
+        <Point X="3.188" Y="5.312" />
+        <Point X="8.75" Y="5.312" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAABAABAAA=</HashCode>
+      <FileName>ValidationRules\ValidationRuleDatesBornees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Mdt10.Metier.ValidationRule.IValidationRule">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ValidationRules\IValidationRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Mdt10.Metier.ValidationData.ErrorLevel">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ValidationData\ErreurLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

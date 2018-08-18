@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Mdt10.Metier.Entites" assembly="Mdt10.Metier">
+  <class name="Document" table="document">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <version name="Version" column="version"/>
+
+    <!--<property name="Titre" column="titre"/>-->
+    <property name="Titre" type="String">
+      <column name="titre" not-null="true" length="200" sql-type="VARCHAR(200)" />
+    </property>
+
+    <!--<property name="Resume" column="resume"/>-->
+    <property name="Resume" type="String">
+      <column name="resume" not-null="false"  sql-type="TEXT" />
+    </property>
+
+    <!--<property name="IdNationalite" column="id_nationalite"/>-->
+    <property name="IdNationalite" type="Int32">
+      <column name="id_nationalite" not-null="false"  sql-type="INTEGER" />
+    </property>
+
+    <!--<property name="DateParution" column="date_parution"/>-->
+    <property name="DateParution" type="DateTime">
+      <column name="date_parution" not-null="true" sql-type="DATETIME" />
+    </property>
+
+    <!--<property name="DateEntree" column="date_entree"/>-->
+    <property name="DateEntree" type="DateTime">
+      <column name="date_entree" not-null="true" sql-type="DATETIME" />
+    </property>
+
+    <!--<property name="Disponible" column="disponible"/>-->
+    <property name="Disponible" type="Boolean">
+      <column name="disponible" not-null="true" sql-type="BIT" />
+    </property>
+
+    <!--<property name="NomEnfant" column="nom_enfant"/>-->
+    <property name="NomEnfant" type="String">
+      <column name="nom_enfant" not-null="false" length="25" sql-type="VARCHAR(25)" />
+    </property>
+
+    <!--<many-to-one name="Genre" column="id_genre"/>-->
+    <many-to-one name="Genre" class="Genre">
+      <column name="id_genre" not-null="true" sql-type="INTEGER" />
+    </many-to-one>
+
+    <!--<many-to-one name="TypeDocument" column="id_type_document"/>-->
+    <many-to-one name="TypeDocument" class="TypeDocument">
+      <column name="id_type_document" not-null="false" sql-type="INTEGER" />
+    </many-to-one>
+    
+    <component name="TimeStamp" class="TimeStamp">
+
+      <property name="CreateUser" type="String">
+        <column name="create_user" not-null="true" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="CreateDate" type="DateTime">
+        <column name="create_date" not-null="true" sql-type="DATETIME" />
+      </property>
+
+      <property name="UpdateUser" type="String">
+        <column name="update_user" not-null="false" length="25" sql-type="VARCHAR(25)" />
+      </property>
+
+      <property name="UpdateDate" type="DateTime">
+        <column name="update_date" not-null="false" sql-type="DATETIME" />
+      </property>
+
+    </component>
+
+    <joined-subclass name="Periodique" table="periodique">
+      <key>
+        <column name="id" not-null="true" />
+      </key>
+
+      <!--<property name="DateFinParution" column="date_fin_parution"/>-->
+      <property name="DateFinParution" type="DateTime">
+        <column name="date_fin_parution" not-null="false"  sql-type="DateTime" />
+      </property>
+
+      <!--<property name="NumeroSpecial" column="numero_special"/>-->
+      <property name="NumeroSpecial" type="String">
+        <column name="numero_special" not-null="false" length="50" sql-type="VARCHAR(50)" />
+      </property>
+
+      <!--<many-to-one name="Revue" column="id_revue"/>-->
+      <many-to-one name="Revue" class="Revue">
+        <column name="id_revue" not-null="true" sql-type="INTEGER" />
+      </many-to-one>
+
+    </joined-subclass>
+
+    <joined-subclass name="Livre" table="livre">
+      <key>
+        <column name="id" not-null="true" />
+      </key>
+
+      <!--<property name="Auteur" column="auteur"/>-->
+      <property name="Auteur" type="String">
+        <column name="auteur" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+      
+      <!--<property name="Editeur" column="editeur"/>-->
+      <property name="Editeur" type="String">
+        <column name="editeur" not-null="false" length="32" sql-type="VARCHAR(32)" />
+      </property>
+      
+      <!--<property name="Isbn" column="isbn"/>-->
+          <property name="Isbn" type="String">
+      <column name="isbn" not-null="true" length="32" sql-type="VARCHAR(32)" />
+    </property>
+      
+    </joined-subclass>
+
+    <joined-subclass name="Audio" table="audio">
+      <key>
+        <column name="id" not-null="true" />
+      </key>
+
+      <!--<property name="Album" column="album"/>-->
+      <property name="Album" type="String">
+        <column name="album" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+      
+    </joined-subclass>
+
+    
+    <joined-subclass name="Video" table="video">
+      <key>
+        <column name="id" not-null="true" />
+      </key>
+      
+      <!--<property name="Realisateur" column="realisateur"/>-->
+      <property name="Realisateur" type="String">
+        <column name="realisateur" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+      
+    </joined-subclass>
+
+    <joined-subclass name="BandeDessinnee" table="bande_dessinnee">
+      <key>
+        <column name="id" not-null="true" />
+      </key>
+      
+      <!--<property name="Auteur" column="auteur"/>-->
+      <property name="Auteur" type="String">
+        <column name="auteur" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+
+      <!--<property name="NomSerie" column="nom_serie"/>-->
+      <property name="NomSerie" type="String">
+        <column name="nom_serie" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+
+      <!--<property name="NumeroSerie" column="numero_serie"/>-->
+      <property name="NumeroSerie" type="String">
+        <column name="numero_serie" not-null="true" length="32" sql-type="VARCHAR(32)" />
+      </property>
+
+    </joined-subclass>
+  </class>
+</hibernate-mapping>
