@@ -22,6 +22,7 @@ namespace Mdt10.WPF
     {
         public MainWindow()
         {
+            ///////
             InitializeComponent();
         }
     }
