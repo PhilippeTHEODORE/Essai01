@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Mdt10.Metier;
+using Mdt10.Metier.DataInterfaces;
+
 namespace Mdt10.WPF
 {
     /// <summary>
@@ -23,6 +26,13 @@ namespace Mdt10.WPF
         public MainWindow()
         {
             ///////
+
+
+            Windsor.Init();
+            Windsor.GetObjet<IMediaDaoEntite>();
+            Windsor.GetObjet<ILivreDaoEntite>();
+
+
             InitializeComponent();
         }
     }
