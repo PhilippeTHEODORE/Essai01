@@ -32,7 +32,6 @@ namespace Mdt10.WPF
             Windsor.GetObjet<IMediaDaoEntite>();
             Windsor.GetObjet<ILivreDaoEntite>();
 
-
             InitializeComponent();
         }
     }
