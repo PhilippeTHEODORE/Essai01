@@ -7,6 +7,9 @@
 
     <Window.Resources>
         <conv:BooleanConverter x:Key="Converter1"/>
+
+        <conv:BooleanImageConverter x:Key="ImagePathConverter"></conv:BooleanImageConverter>
+
     </Window.Resources>
 
     <Window.DataContext>
@@ -14,13 +17,13 @@
     </Window.DataContext>
 
     <Grid>
-        <Expander Margin="5" Padding="5" Header="Region One" BorderThickness="2" >
-            <ListBox Grid.Column="1" Grid.Row="4" Name="lstStrings" Width="200" Height="300" ItemsSource="{Binding ListeLivres}" >
+        <Expander Height="Auto" Margin="5" Padding="5" Header="Livres" BorderThickness="1" BorderBrush="Bisque">
+            <ListBox BorderThickness="2" Grid.Column="1" Grid.Row="4" Name="lstStrings" Width="500" Height="Auto" ItemsSource="{Binding ListeLivres}" HorizontalAlignment="Left" VerticalAlignment="Top" >
 
                 <ListBox.ItemContainerStyle>
                     
                     <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Background" Value="LightSteelBlue" />
+                        <Setter Property="Background" Value="Beige" />
                         <Setter Property="Margin" Value="5" />
                         <Setter Property="Padding" Value="5" />
                         <Style.Triggers>
@@ -43,13 +46,27 @@
                             </DataTrigger>
                         </DataTemplate.Triggers>
 
-                        <StackPanel Width="500">
-                            <TextBlock Background="LightGray"  FontWeight="Bold" Text="{Binding Auteur}"/>
-                            <TextBlock Background="Beige" Text="{Binding Titre}"/>
-                            <TextBlock Background="Beige" Text="{Binding DateEntree}"/>
+                        <StackPanel Width="Auto" ClipToBounds="True">
+                            <TextBlock Background="LightGray"  FontWeight="Bold" Text="{Binding Auteur}" Padding="2,0,0,0" ClipToBounds="True"/>
+                            <TextBlock Background="Beige" Text="{Binding Titre}" Padding="2,0,0,0" ClipToBounds="True"/>
+                            <TextBlock Background="Beige" Text="{Binding DateEntree}" ClipToBounds="True"/>
                             <TextBlock Background="Beige" Text="{Binding TypeDocument.Libelle}"/>
-                            <TextBlock Background="Beige" Text="{Binding Disponible , Converter={StaticResource Converter1}}"/>
-                            
+                            <Grid  Background="Beige">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                
+                                <Image Grid.Column="0" Margin="2,2,2,2" Width="20" Height="20" Stretch="Fill"  Source="{Binding Path=Disponible, Converter={StaticResource ImagePathConverter}}"></Image>
+                                <TextBlock Grid.Column="1" Margin="2,4,2,2" Background="Beige" Text="{Binding Disponible , Converter={StaticResource Converter1}}"/>
+                           
+                            </Grid>
+
                         </StackPanel>
 
                     </DataTemplate>

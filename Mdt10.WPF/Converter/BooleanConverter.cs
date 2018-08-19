@@ -11,7 +11,7 @@ namespace Mdt10.WPF.Converter
 {
 
     // Custom class implements the IValueConverter interface.
-    public class BooleanImageConverter : IValueConverter
+    public class BooleanConverter : IValueConverter
     {
 
         #region IValueConverter Members
