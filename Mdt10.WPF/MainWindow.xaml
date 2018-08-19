@@ -2,38 +2,67 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Mdt10.WPF.ViewModel"      
+        xmlns:conv="clr-namespace:Mdt10.WPF.Converter"      
         Title="MainWindow" Height="350" Width="525">
 
-
+    <Window.Resources>
+        <conv:BooleanConverter x:Key="Converter1"/>
+    </Window.Resources>
 
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
 
     <Grid>
+        <Expander Margin="5" Padding="5" Header="Region One" BorderThickness="2" >
+            <ListBox Grid.Column="1" Grid.Row="4" Name="lstStrings" Width="200" Height="300" ItemsSource="{Binding ListeLivres}" >
 
-        <ListBox Grid.Column="1" Grid.Row="4" Name="lstStrings" Width="200" Height="300" ItemsSource="{Binding ListeLivres}" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Width="500">
-                        <TextBlock Background="LightGray"  FontWeight="Bold" Text="{Binding Auteur}"/>
-                        <TextBlock Background="Beige" Text="{Binding Titre}"/>
-                        <TextBlock  Background="Beige" Text="{Binding DateEntree}"/>
-                        <TextBlock  Background="Beige" Text="{Binding TypeDocument.Libelle}"/>
-                        <TextBlock  Background="Beige" Text="{Binding Disponible}"/>
-                    </StackPanel>
+                <ListBox.ItemContainerStyle>
                     
-                </DataTemplate>
-                
-                
-            </ListBox.ItemTemplate>
-           
-        
-        
-        </ListBox>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Background" Value="LightSteelBlue" />
+                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="Padding" Value="5" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="LightBlue" />
+                                <Setter Property="Foreground" Value="RosyBrown" />
+                                <Setter Property="BorderBrush" Value="Black" />
+                                <Setter Property="BorderThickness" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ItemTemplate >
+                    <DataTemplate >
+
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Path=Disponible}" Value="False">
+                                <Setter Property="ListBoxItem.Foreground" Value="Red"></Setter>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+
+                        <StackPanel Width="500">
+                            <TextBlock Background="LightGray"  FontWeight="Bold" Text="{Binding Auteur}"/>
+                            <TextBlock Background="Beige" Text="{Binding Titre}"/>
+                            <TextBlock Background="Beige" Text="{Binding DateEntree}"/>
+                            <TextBlock Background="Beige" Text="{Binding TypeDocument.Libelle}"/>
+                            <TextBlock Background="Beige" Text="{Binding Disponible , Converter={StaticResource Converter1}}"/>
+                            
+                        </StackPanel>
+
+                    </DataTemplate>
+
+
+                </ListBox.ItemTemplate>
 
 
 
+            </ListBox>
 
+
+
+        </Expander>
     </Grid>
 </Window>
