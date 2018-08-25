@@ -122,6 +122,7 @@
     <Compile Include="BuffersEntites\BufferMotCle.cs" />
     <Compile Include="DaoHelper.cs" />
     <Compile Include="DataInterfaces\IDaoEntites.cs" />
+    <Compile Include="Entites\LivreContext.cs" />
     <Compile Include="Entites\Utilisateur.cs" />
     <Compile Include="Enums\StatusBuffer.cs" />
     <Compile Include="ValidationData\AbstractValidationData.cs" />

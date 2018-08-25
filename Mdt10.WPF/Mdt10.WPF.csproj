@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\BooleanColorConverter.cs" />
     <Compile Include="Converter\BooleanImageConverter.cs" />
     <Compile Include="Converter\BooleanConverter.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />

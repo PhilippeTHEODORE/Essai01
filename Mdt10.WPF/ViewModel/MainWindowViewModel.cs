@@ -18,15 +18,31 @@ namespace Mdt10.WPF.ViewModel
 {
     public class MainWindowViewModel
     {
+        private ILivreDaoEntite daoLivres = Windsor.GetObjet<ILivreDaoEntite>();
+        private IExemplaireDaoEntite daoExemplaires = Windsor.GetObjet<IExemplaireDaoEntite>();
 
-        ILivreDaoEntite dao = Windsor.GetObjet<ILivreDaoEntite>();
+        private List<Livre> _listeLivres;
+        private List<Exemplaire> _listeExemplaires;
 
-        public List<Livre> _listeLivres;
-
+        private List<LivreContext> _livres;
 
         public MainWindowViewModel()
         {
-            _listeLivres = dao.GetAll();
+            _listeLivres = daoLivres.GetAll();
+            _listeExemplaires = daoExemplaires.GetAll();
+
+            _livres = _listeLivres.Select(livre => new LivreContext 
+                { 
+                    Livre = livre, 
+                    Exemplaires = _listeExemplaires.Select(exemplaire => exemplaire).Where(exemplaire => exemplaire.Document.Id == livre.Id).ToList() 
+                }
+            ).ToList();
+        }
+
+
+        public IList<LivreContext> LivresContext
+        {
+            get { return _livres; }
         }
 
         public List<Livre> ListeLivres
@@ -34,5 +50,12 @@ namespace Mdt10.WPF.ViewModel
             get { return _listeLivres; }
         }
 
+        public List<Exemplaire> ListeExemplaires
+        {
+            get { return _listeExemplaires; }
+        }
     }
 }
+
+
+
