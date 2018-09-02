@@ -13,6 +13,7 @@ using Mdt10.Metier.DataInterfaces;
 
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Mdt10.WPF.ViewModel
 {
@@ -24,23 +25,25 @@ namespace Mdt10.WPF.ViewModel
         private List<Livre> _listeLivres;
         private List<Exemplaire> _listeExemplaires;
 
-        private List<LivreContext> _livres;
+        private ObservableCollection<LivreContext> _livres;
 
         public MainWindowViewModel()
         {
             _listeLivres = daoLivres.GetAll();
             _listeExemplaires = daoExemplaires.GetAll();
 
-            _livres = _listeLivres.Select(livre => new LivreContext 
-                { 
-                    Livre = livre, 
-                    Exemplaires = _listeExemplaires.Select(exemplaire => exemplaire).Where(exemplaire => exemplaire.Document.Id == livre.Id).ToList() 
+            _livres = new ObservableCollection<LivreContext>(_listeLivres.Select(livre => new LivreContext
+                {
+                    IsSelected = false,
+                    Livre = livre,
+                    Exemplaires = _listeExemplaires.Select(exemplaire => exemplaire).Where(exemplaire => exemplaire.Document.Id == livre.Id).ToList()
                 }
-            ).ToList();
+            ).ToList());
+
+            //_livres[0].IsSelected = true;
         }
 
-
-        public IList<LivreContext> LivresContext
+        public ObservableCollection<LivreContext> LivresContext
         {
             get { return _livres; }
         }
@@ -54,7 +57,12 @@ namespace Mdt10.WPF.ViewModel
         {
             get { return _listeExemplaires; }
         }
+
+
     }
+
+
+
 }
 
 

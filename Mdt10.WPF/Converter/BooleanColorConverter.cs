@@ -21,10 +21,10 @@ namespace Mdt10.WPF.Converter
         public object Convert(object value, Type targetType,
             object parameter, CultureInfo language)
         {
-           // if ((bool)value)
-            //    return Colors.DarkGreen;
-            //else
-            return (Color)Colors.DarkGreen;
+            if ((bool)value)
+                return Brushes.Green;
+            else
+                return Brushes.Red;
         }
 
         // ConvertBack is not implemented for a OneWay binding.

@@ -1,82 +1,83 @@
-﻿<Window
+﻿<Window x:Class="Mdt10.WPF.MainWindow" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Mdt10.WPF.ViewModel"      
         xmlns:conv="clr-namespace:Mdt10.WPF.Converter"      
-        xmlns:Entites="clr-namespace:Mdt10.Metier.Entites;assembly=Mdt10.Metier" x:Class="Mdt10.WPF.MainWindow"      
+        xmlns:Entites="clr-namespace:Mdt10.Metier.Entites;assembly=Mdt10.Metier" 
+             
         Title="MainWindow" Height="350" Width="525">
 
     <Window.Resources>
         <conv:BooleanConverter x:Key="Converter1"/>
         <conv:BooleanImageConverter x:Key="ImagePathConverter"/>
-        <conv:BooleanColorConverter x:Key="BoolColorConverter"/>
+        <conv:BooleanColorConverter x:Key="xBoolColorConverter"/>
+
     </Window.Resources>
 
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
 
+
     <Grid>
-        <ListBox BorderThickness="2" Grid.Column="1" Grid.Row="4" x:Name="ListeLivres" Width="450" Height="Auto" 
-			ItemsSource="{Binding Path=LivresContext}" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <StackPanel ScrollViewer.CanContentScroll="True">
 
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="Background" Value="Beige" />
-                    <Setter Property="Margin" Value="5" />
-                    <Setter Property="Padding" Value="5" />
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="LightBlue" />
-                            <Setter Property="Foreground" Value="RosyBrown" />
-                            <Setter Property="BorderBrush" Value="Black" />
-                            <Setter Property="BorderThickness" Value="1" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListBox.ItemContainerStyle>
+            <Button Click="DeActiver_Click" Content="rrrrrrrrrrr" />
 
-            <ListBox.ItemTemplate >
+        </StackPanel>
+
+        <ListBox BorderThickness="2" Grid.Column="1" Grid.Row="4" Name="ListeLivres" Width="450" Height="Auto"
+			ItemsSource="{Binding Path=LivresContext}" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" 
+               SelectionChanged="ListeLivres_SelectionChanged" x:FieldModifier="public" >
+
+            <ListBox.ItemTemplate>
+
                 <DataTemplate >
-
-                    <DockPanel>
-                    
-               
-
-                        <Border HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="#FFF12D2D" DockPanel.Dock="Top">
-                            <TextBlock Background="LightGray" FontWeight="Bold" Text="{Binding Livre.Genre.Libelle}" Padding="2,0,0,0"/>
+                    <StackPanel>
+                        <Border BorderThickness="2" BorderBrush="#FFF12D2D" CornerRadius="5" Padding="10,0" Background="LightGray">
+                            <TextBlock Background="LightGray" FontWeight="Bold" Text="{Binding Livre.Genre.Libelle}" Padding="5,0"/>
                         </Border>
 
-                        <TextBlock Background="Beige" Text="{Binding Livre.Auteur}" Padding="2,0,0,0" DockPanel.Dock="Top"/>
-                        <TextBlock Background="Beige" Text="{Binding Livre.Titre}" DockPanel.Dock="Bottom"/>
+                        <TextBlock Background="Beige" Text="{Binding Livre.Auteur}" Padding="2,0,0,0"/>
+                        <TextBlock Background="Beige" Text="{Binding Livre.Titre}"/>
+
+                        <TextBlock Background="Beige" Text="{Binding IsSelected}"/>
+                        <TextBlock Background="Beige" Text="{Binding IsExpanded}"/>
+
                         <TextBlock Background="Beige" Text="{Binding Livre.TypeDocument.Libelle}"/>
-                        <Grid  Background="Beige">
+
+                        <Grid  Background="Beige" Width="Auto">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="200"/>
                             </Grid.ColumnDefinitions>
 
-                            <Image Grid.Column="0" Margin="2,2,2,2" Width="20" Height="20" Stretch="Fill"  
+                            <Image Grid.Row="0"  Grid.Column="0" Margin="2,2,2,2" Width="20" Height="20" 
 								Source="{Binding Livre.Disponible, Converter={StaticResource ImagePathConverter}}"/>
-                            <TextBlock Grid.Column="1" Margin="2,4,2,2" Background="Beige" 
-								Foreground="{Binding Livre.Disponible, Converter={StaticResource BoolColorConverter}}"
+
+                            <TextBlock Grid.Row="0" Grid.Column="1" Margin="2,4,2,2" 
+								Foreground="{Binding Livre.Disponible, Converter={StaticResource xBoolColorConverter}}"
 								Text="{Binding Livre.Disponible, Converter={StaticResource Converter1}}"/>
+
+                            <Button  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Ajouter exemplaire" IsEnabled="{Binding IsSelected}" HorizontalAlignment="Stretch"  />
+
                         </Grid>
 
                         <Grid>
                             <!-- Sous liste des exemplaires -->
-                            <Expander  Header="{ Binding Exemplaires.Count }" IsExpanded="False">
+                            <Expander x:Name="ExemplairesExpander" Header="{ Binding Exemplaires.Count }"  IsExpanded="{Binding IsExpanded, Mode=TwoWay}" IsEnabled="{Binding IsSelected}"  >
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition />
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
 
-                                    <ListBox Grid.Row="0" x:Name="ListeExemplaire" ItemsSource="{Binding Exemplaires}">
+                                    <ListBox Grid.Row="0" Name="ListeExemplaire" ItemsSource="{Binding Exemplaires}" >
                                         <ListBox.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
@@ -86,19 +87,11 @@
                                             </DataTemplate>
                                         </ListBox.ItemTemplate>
                                     </ListBox>
-
                                     <Button Grid.Row="1" Content="Ajouter exemplaire" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" />
-
                                 </Grid>
-
                             </Expander>
                         </Grid>
-
-                        
-
-
-                    </DockPanel>
-
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -106,3 +99,7 @@
     </Grid>
 </Window>
 
+
+<!--<DataTrigger Binding="{Binding Path=Livre.Disponible}" Value="True">
+    <Setter TargetName="ExemplairesExpander" Property="IsExpanded" Value="True" />
+</DataTrigger>-->
